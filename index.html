@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title>App</title>
+  <script src="jquery.slim.min.js"></script>
+  <script src="eztz.min.js"></script>
+  <script src="index.js">  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <style>
+    span{
+      color:red
+    }
+    .ui-progressbar {
+    position: relative;
+  }
+  .progress-label-head {
+    font-weight: bold;
+    text-shadow: 1px 1px 0 #fff;
+  }
+  .progress-label {
+    font-weight: bold;
+    font-size:large;
+    text-shadow: 1px 1px 0 #fff;
+  }
+  </style>
+</head>
+<body>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12" style="padding: 0px;" id="navigationbar">
+        <nav class="navbar navbar-expand-lg navbar-light" >
+          <a class="navbar-brand" href="https://sprytech.uk"><img src="logo.jpg" id="logo"></img></a>
+          <a class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </a>
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-lg-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+              </li>            
+            </ul>         
+          </div>
+        </nav>
+
+        <section class="banner">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-12">
+                
+
+              <div class="row" >
+                <div class="col-sm-5" style="text-align: center;">
+                  <br><br><br>
+                  <h4> <b> Blockchain based</b></h4>
+                  <h2><b>Loan Management System</b></h2>
+                  <h4>(Secure digital lending to the masses)</h4>
+                
+                </div>
+                
+                <div class="col-sm-3" style="text-align: center;" id="desktopIcon">
+                  <div class="circle" style="margin:auto;"><p style="color:black;font-size:20px;text-align:center"><b>Check your Eligibility</b></p></div>                 
+                </div>
+                <div class="col-sm-3 offset-sm-1" style="text-align: center;" id="desktopIcon1">
+                  <div class="circle"style="margin:auto;"><p style="color:black;font-size:20px;"><b>Apply for loan</b></p></div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-5" style="text-align: center;">
+                  <br><br>
+                  <a class="btn btn-primary" href="#applicationForm" onclick="$('#applicationForm').show()" style="width:60%;">Check your Eligibility</a>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+
+        </section>
+      </div>
+    </div>
+
+
+    <div class="row" id="applicationForm">
+
+      <div class="col-sm-6 offset-sm-3" id="formloan">
+        <h3>Fill in the Application Form</h3>
+        <form  name ="myForm"  method="post" id="loanForm">
+          <div class="form-group">
+            <label for="ageInput">Age</label>*
+            <input type="text" class="form-control" id="ageInput" placeholder="Enter your age" required>
+            <span id="ageErr"></span>
+          </div>
+          <div class="form-group">
+            <label for="childrenInput">How many children do you have? If no enter 0</label>*
+            <input type="text" class="form-control" id="childrenInput" placeholder="Enter how many children" required>
+            <span id="childErr"></span>
+          </div>
+          <div class="form-group">
+            <label for="fullNameInput">Full Name</label>*
+            <input type="text" class="form-control" id="fullNameInput" placeholder="Enter your full name" required>
+          </div>
+          <div class="form-group">
+            <label for="loanValueInput">Loan Value<sub>in GBP </sub></label>*
+            <input type="text" class="form-control" id="loanValueInput" placeholder="Enter required loan value" required>
+            <span id="loanErr"></span>
+          </div>
+          <div class="form-group">
+            <label for="locationInput">Location</label>*
+            <input type="text" class="form-control" id="locationInput" placeholder="Enter location" required>
+          </div>
+          <div class="form-group">
+            <label for="marriageStatusInput">Marrital Status</label>*
+            <div class="form-check">
+              <input type="radio" class="form-check-input" id="marriedInput" value="True" name="status" required>
+              <label class="form-check-label" for="marriedInput">Married</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" class="form-check-input" id="singleInput" value="False" name="status" required>
+              <label class="form-check-label" for="singleInput">Single</label>    
+            </div>  
+          </div>
+          <div class="form-group">
+            <label for="nationalityInput">Nationality</label>*
+            <input type="text" class="form-control" id="nationalityInput" placeholder="Enter nationality" required>
+          </div>          
+          <div class="form-group">
+            <label for="propertyValueInput">Property Value <sub>in GBP</sub></label>*
+            <input type="text" class="form-control" id="propertyValueInput" placeholder="Enter property value" required>
+            <span id="propertyErr"></span>
+          </div>
+          <div class="form-group">
+            <label for="salaryInput">Salary <sub>in GBP</sub></label>*
+            <input type="text" class="form-control" id="salaryInput" placeholder="Enter your salary" required>
+            <span id="salaryErr"></span>
+          </div>
+         
+          <button type="button" class="btn btn-primary" id="check">Submit</button>
+          <br>
+          <br>
+          <br>
+        </form>
+      </div>
+      
+      <div class="col-sm-6 offset-sm-3" id="ResultCreditFalse" style="text-align:center;">
+        <h1>We are Sorry!!</h1><br>
+        <p>Your eligibility score is <span id="creditScoreFalse"></span></p>
+        <p>You are not eligible for requested Loan Amount</p>
+        <p>You can retry for a smaller Loan amount if required!!</p>
+      </div>
+      <div class="col-sm-6 offset-sm-3" id="ResultCreditTrue" style="text-align:center";>
+        <h1>Congratulations!!</h1>
+        <p>Your eligibility score is <span id="creditScoreTrue"></span></p>
+        <p>You are eligible for Loan Amount of <span id="eligibleLoanAmount"></span> based on your details.</p>
+        <p>Your refernce id for application is <span id="contractId"></span>. Kindly keep it for further references.</p>
+      </div>
+      <div class="col-sm-6 offset-sm-3" id="progressbar" style="text-align: center;">
+        <div class="row">
+          <div class="col-sm-12" style="text-align: center;">
+            <div class="progress-label-head"><h1>Your eligibility score is being calculated!! Keep Patience!!</h1></div>
+          </div>
+        </div>  
+        <div class="row">
+          <div class="col-sm-12" style="text-align: center;">
+            <div class="progress-label"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+
+  </div> 
+</body>
+</html>

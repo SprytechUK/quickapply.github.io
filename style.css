@@ -1,0 +1,38 @@
+.banner{
+    position: relative;
+    background: url("photo.jfif");
+    min-height: 70vh;
+    background-size: cover;
+    background-position: center;
+    color:white;
+    padding: 150px 0 100px;
+}
+
+#logo{
+    height: 5vh;
+}
+
+#applicationForm{
+    display: none;
+}
+
+.circle {
+    background-color: white;
+    border: 3px solid #FFF;
+    border-radius: 50%;
+    padding: 0;
+    height: 250px;
+    width: 100%;
+    text-align: center;
+    line-height: 250px;
+  }
+  
+
+  @media screen and (max-width:600px){
+      #desktopIcon{
+          display: none;
+      }
+      #desktopIcon1{
+          display: none;
+      }
+  }
